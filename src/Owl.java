@@ -1,13 +1,15 @@
 public class Owl {
-    public Owl(int sleep, int dirt, int hunger) {
+    public Owl(int sleep, int dirt, int hunger, int drunkenness) {
         this.sleep = sleep;
         this.dirt = dirt;
         this.hunger = hunger;
+        this.drunkenness = drunkenness;
     }
 
     private int sleep;
     private int dirt;
     private int hunger;
+    private int drunkenness;
 
 
 
@@ -25,6 +27,7 @@ public class Owl {
         hunger = hunger - 3;
         dirt++;
         sleep++;
+        drunkenness--;
         if (hunger <= -1) {
             hunger = 0;
         }
@@ -33,6 +36,7 @@ public class Owl {
         dirt = dirt - 3;
         hunger++;
         sleep++;
+        drunkenness--;
         if (dirt <= -1) {
             dirt = 0;
         }
@@ -41,6 +45,7 @@ public class Owl {
         sleep = sleep - 3;
         dirt++;
         hunger++;
+        drunkenness--;
         if (sleep <= -1) {
             sleep = 0;
         }
@@ -50,7 +55,25 @@ public class Owl {
         sleep++;
         dirt++;
         hunger++;
+        drunkenness--;
     }
+
+    public  void drink() {
+        sleep--;
+        dirt--;
+        hunger--;
+        drunkenness = drunkenness +2;
+        if (sleep <= -1) {
+            sleep = 0;
+        }
+        if (dirt <= -1) {
+            dirt = 0;
+        }
+        if (hunger <= -1) {
+            hunger = 0;
+        }
+    }
+
 
     public void printOwl() {
         printClearWindow();
@@ -72,13 +95,24 @@ public class Owl {
     }
 
     public void printActions() {
-        System.out.println("Feeding:1");
-        System.out.println("Washing:2");
-        System.out.println("Sleeping:3");
-        System.out.println("Do nothing:4");
+        System.out.println("Feeding: 1");
+        System.out.println("Washing: 2");
+        System.out.println("Sleeping: 3");
+        System.out.println("Do nothing: 4");
+        System.out.println("Drink beer: 5");
+        System.out.println("For Help: 0(Zero)");
     }
 
+    public void printHelp() {
+        printClearWindow();
+        System.out.println("");
+        System.out.println("Harald the Owl");
+        System.out.println("Harald dies if you accumulate 10 points in the attributes HUNGER, DIRT and SLEEP");
+        System.out.println("Harald is a real bavarian owl! So he always wants beer.");
+        System.out.println("But don't let him get 10 points in DRUNKENNESS or 0 points!");
+        System.out.println("");
 
+    }
 
 
 
@@ -116,9 +150,12 @@ public class Owl {
     }
 
 
-
-
-
+    public int getDrunkenness() {
+        return drunkenness;
+    }
+    public void setDrunkenness(int drunkenness) {
+        this.drunkenness = drunkenness;
+    }
 
 
     // ------------------------------------------
@@ -213,6 +250,20 @@ public class Owl {
          }
      }
 
+    public void animationDrink (int count) throws InterruptedException {
+        for (int i = 0; i < count; i++) {
+
+            printClearWindow();
+            printDrink1();
+            Thread.sleep(500);
+            printClearWindow();
+            printDrink2();
+            Thread.sleep(500);
+            printClearWindow();
+            printNormal();
+            Thread.sleep(250);
+        }
+    }
 
 
 
@@ -221,6 +272,36 @@ public class Owl {
     // ------------------------------------------
 
 
+    public void printDrink1() {
+
+        // Drink
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("             .~~~~.       ");
+        System.out.println(" .^.^.       i====i_      ");
+        System.out.println("((^O^))      |cccc|_)     ");
+        System.out.println("():::()      |cccc|      ");
+        System.out.println("  VVV        `-==-       ");
+        System.out.println(" ");
+    }
+
+
+    public void printDrink2() {
+
+        // Drink
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println("                 ___      ");
+        System.out.println("              __|___|_.   ");
+        System.out.println(" .^.^.       ° 0 0 0 0|   ");
+        System.out.println("((^O^))      °________|   ");
+        System.out.println("():::()                   ");
+        System.out.println("  VVV   ");
+        System.out.println(" ");
+    }
 
 
 
@@ -244,7 +325,7 @@ public class Owl {
         // Normal
         System.out.println(" ");
         System.out.println(" .^.^. ");
-        System.out.println("((ovo))");
+        System.out.println("((°v°))");
         System.out.println("():::()");
         System.out.println("  VVV  ");
         System.out.println(" ");
@@ -253,10 +334,10 @@ public class Owl {
     public void printHappy() {
 
         // Happy
-        System.out.println(" 0");
-        System.out.println("  0");
-        System.out.println("      0");
-        System.out.println("     0");
+        System.out.println(" ° 0");
+        System.out.println(" °0");
+        System.out.println("       °°");
+        System.out.println("     ° 0");
         System.out.println(" ");
         System.out.println(" .^.^. ");
         System.out.println("((^v^))");
@@ -268,9 +349,9 @@ public class Owl {
     public void printSleepy() {
 
         // Sleep
-        System.out.println("         z");
+        System.out.println("         Z");
         System.out.println("      z");
-        System.out.println("   z");
+        System.out.println("   Z");
         System.out.println("     z");
         System.out.println(" ");
         System.out.println(" .-.-. ");
@@ -318,6 +399,12 @@ public class Owl {
 
         System.out.print("Hunger: " + hunger + " ");
         for (int i = 0; i < hunger; i++) {
+            System.out.print("#");
+        }
+        System.out.println("");
+
+        System.out.print("Drunkenness: " + drunkenness + " ");
+        for (int i = 0; i < drunkenness; i++) {
             System.out.print("#");
         }
         System.out.println("");

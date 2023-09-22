@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        Owl harald = new Owl(9, 5, 4);
+        Owl harald = new Owl(8, 6, 4, 5);
         boolean isRunning = true;
 
 
@@ -12,6 +12,16 @@ public class Main {
             Input input = new Input();
             int inputNumb = input.getInput();
 
+            if (inputNumb == 0){
+                harald.printHelp();
+                Thread.sleep(3000);
+                harald.printClearWindow();
+            }
+
+            if (inputNumb == 5) {
+                harald.drink();
+                harald.animationDrink(harald.analyseStat(harald.getDrunkenness()));
+            }
 
             if (inputNumb == 4) {
                 harald.nothing();
@@ -33,7 +43,7 @@ public class Main {
                 harald.animationFeed(harald.analyseStat(harald.getHunger()));
             }
 
-            if (harald.getHunger() == 10 || harald.getDirt() == 10 || harald.getSleep() == 10) {
+            if (harald.getHunger() == 10 || harald.getDirt() == 10 || harald.getSleep() == 10 || harald.getDrunkenness() == 10 || harald.getDrunkenness() == 0) {
                 harald.printGameOver();
                 isRunning = false;
             }
