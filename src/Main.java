@@ -12,13 +12,13 @@ public class Main {
             Input input = new Input();
             int inputNumb = input.getInput();
 
-            if (inputNumb == 0){
+            if (inputNumb == 8){
                 harald.printHelp();
                 isRunning = input.getInput() == 9;
                 harald.printClearWindow();
             }
 
-            if (inputNumb == 8){
+            if (inputNumb == 0){
                 isRunning = false;
             }
 

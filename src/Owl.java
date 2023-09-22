@@ -84,46 +84,42 @@ public class Owl {
     }
 
     public void printEnterNumb() {
-        System.out.println("");
+        System.out.println();
         System.out.println("Enter Number:");
     }
 
     public void printClearWindow() {
         for (int i = 0; i < 30; i++) {
-            System.out.println("");
+            System.out.println();
         }
     }
 
     public void printActions() {
-        System.out.println("Feeding:  [1]");
-        System.out.println("Washing:  [2]");
+        System.out.println("Feeding:  [1]                For Help:   [8]");
+        System.out.println("Washing:  [2]                Close Game: [0]");
         System.out.println("Sleeping: [3]");
         System.out.println("Do nothing: [4]");
         System.out.println("Drink beer: [5]");
-        System.out.println("For Help:   [0](Zero)");
-        System.out.println("Close Game: [8]");
     }
 
     public void printHelp() {
         printClearWindow();
-        System.out.println("");
+        System.out.println();
         System.out.println("Harald the Owl");
         System.out.println("Harald dies if you accumulate 10 points in the attributes HUNGER, DIRT and SLEEP");
         System.out.println("Harald is a real bavarian owl! So he always wants beer.");
         System.out.println("But don't let him get 10 points in DRUNKENNESS or 0 points!");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
+        System.out.println();
+        System.out.println();
+        System.out.println();
         System.out.println("Press 9 to continue...");
 
     }
 
-
-
     public void printGoodBye() {
         printClearWindow();
         System.out.println("Good Bye!");
-        System.out.println("");
+        System.out.println();
     }
 
 
