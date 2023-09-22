@@ -14,8 +14,12 @@ public class Main {
 
             if (inputNumb == 0){
                 harald.printHelp();
-                Thread.sleep(3000);
+                isRunning = input.getInput() == 9;
                 harald.printClearWindow();
+            }
+
+            if (inputNumb == 8){
+                isRunning = false;
             }
 
             if (inputNumb == 5) {
@@ -51,7 +55,11 @@ public class Main {
 
 
 
-        }    //try-catch string, only int Numbers!
+        }
+
+        harald.printGoodBye();
+
+        //try-catch string, only int Numbers!
     }
 
 
