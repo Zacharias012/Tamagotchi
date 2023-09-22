@@ -19,6 +19,7 @@ public class Main {
             }
 
             if (inputNumb == 0){
+                harald.printGoodBye();
                 isRunning = false;
             }
 
@@ -56,8 +57,6 @@ public class Main {
 
 
         }
-
-        harald.printGoodBye();
 
         //try-catch string, only int Numbers!
     }

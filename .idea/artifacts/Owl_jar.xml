@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Owl:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Owl_jar</output-path>
+    <root id="archive" name="Owl.jar">
+      <element id="module-output" name="Owl" />
+    </root>
+  </artifact>
+</component>
