@@ -1,8 +1,9 @@
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        Owl harald = new Owl(6,5,4);
+        Owl harald = new Owl(9, 5, 4);
         boolean isRunning = true;
+
 
         while (isRunning) {
 
@@ -14,23 +15,22 @@ public class Main {
 
             if (inputNumb == 4) {
                 harald.nothing();
-                harald.animationConfused(number);
+                harald.animationConfused(harald.analyseStat(1));
             }
 
             if (inputNumb == 3) {
                 harald.sleeping();
-                harald.analyseStat();
-                harald.animationSleep(number);
+                harald.animationSleep(harald.analyseStat(harald.getSleep()));
             }
 
             if (inputNumb == 2) {
                 harald.washing();
-                harald.animationHappy(number);
+                harald.animationHappy(harald.analyseStat(harald.getDirt()));
             }
 
             if (inputNumb == 1) {
                 harald.feeding();
-                harald.animationFeed(number);
+                harald.animationFeed(harald.analyseStat(harald.getHunger()));
             }
 
             if (harald.getHunger() == 10 || harald.getDirt() == 10 || harald.getSleep() == 10) {
@@ -43,4 +43,7 @@ public class Main {
 
         }    //try-catch string, only int Numbers!
     }
+
+
+
 }

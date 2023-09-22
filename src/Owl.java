@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Owl {
     public Owl(int sleep, int dirt, int hunger) {
         this.sleep = sleep;
@@ -122,6 +120,7 @@ public class Owl {
 
 
 
+
     // ------------------------------------------
     //          Methode für Animation
     // ------------------------------------------
@@ -130,61 +129,88 @@ public class Owl {
 
 
 
-    public int analyseStat() {
+    public int analyseStat(int first) {
 
-        //
-        //########################### Status vergleichen => größte Zahl vom Status raussuchen => maybe mit array liste?
-        //
+        int count = 1;
+
+        for (int i = 0; i < count; i++) {
+            int result1 = first / 2;
+
+
+            if (result1 != 0) {
+                count++;
+                first = result1;
+            }
+        }
+        return count;
 
     }
 
 
-     public void animationSleep (int number) throws InterruptedException {
+
+
+
+     public void animationSleep (int count) throws InterruptedException {
+         for (int i = 0; i < count; i++) {
 
              printClearWindow();
              printSleepy();
              Thread.sleep(500);
              printClearWindow();
              printNormal();
+             Thread.sleep(250);
+             printClearWindow();
+             printSleepy();
              Thread.sleep(500);
+
+         }
      }
 
 
-     public void animationHappy (int number) throws InterruptedException {
+     public void animationHappy (int count) throws InterruptedException {
+         for (int i = 0; i < count; i++) {
 
-         printClearWindow();
-         printHappy();
-         Thread.sleep(500);
-         printClearWindow();
-         printNormal();
-         Thread.sleep(500);
+             printClearWindow();
+             printHappy();
+             Thread.sleep(500);
+             printClearWindow();
+             printNormal();
+             Thread.sleep(250);
+             printClearWindow();
+             printHappy();
+             Thread.sleep(500);
+         }
      }
 
 
-     public void animationFeed () throws InterruptedException {
+     public void animationFeed (int count) throws InterruptedException {
+         for (int i = 0; i < count; i++) {
 
-         printClearWindow();
-         printHungry();
-         Thread.sleep(500);
-         printClearWindow();
-         printNormal();
-         Thread.sleep(500);
-         printClearWindow();
-         printHungry();
-         Thread.sleep(500);
+             printClearWindow();
+             printHungry();
+             Thread.sleep(500);
+             printClearWindow();
+             printNormal();
+             Thread.sleep(250);
+             printClearWindow();
+             printHungry();
+             Thread.sleep(500);
+         }
      }
 
-     public void animationConfused () throws InterruptedException {
+     public void animationConfused (int count) throws InterruptedException {
+         for (int i = 0; i < count; i++) {
 
-         printClearWindow();
-         printConfused();
-         Thread.sleep(500);
-         printClearWindow();
-         printNormal();
-         Thread.sleep(500);
-         printClearWindow();
-         printConfused();
-         Thread.sleep(500);
+             printClearWindow();
+             printConfused();
+             Thread.sleep(500);
+             printClearWindow();
+             printNormal();
+             Thread.sleep(250);
+             printClearWindow();
+             printConfused();
+             Thread.sleep(500);
+         }
      }
 
 
